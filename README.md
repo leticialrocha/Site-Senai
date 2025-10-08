@@ -61,4 +61,4 @@ SheetJS (xlsx)
  – para leitura de planilhas
 
 Desenvolvido por Leticia
-꒷˳ ‿ ♡
+# ꒷˳ ‿ ♡
