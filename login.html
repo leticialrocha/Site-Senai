@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meu Site - Exemplo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">MinhaMarca</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu">☰</button>
+      <nav id="nav" class="nav">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#features">Funcionalidades</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌓</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1>Bem-vindo ao seu novo site</h1>
+        <p>Layout responsivo pronto para publicar no GitHub Pages. HTML, CSS e JS separados.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Começar</a>
+          <a class="btn ghost" href="#features">Ver funcionalidades</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <h2>Funcionalidades</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Responsivo</h3>
+          <p>Compatível com dispositivos móveis e desktop.</p>
+        </article>
+        <article class="card">
+          <h3>Fácil de editar</h3>
+          <p>Código claro e organizado em arquivos separados.</p>
+        </article>
+        <article class="card">
+          <h3>Deploy simples</h3>
+          <p>Publicação direta no GitHub Pages.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>Sobre</h2>
+      <p>Este template minimalista é ideal para começar um projeto pessoal ou portfólio. Sinta-se livre para customizar cores, tipografia e conteúdo.</p>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contato</h2>
+      <form id="contact-form" novalidate>
+        <label>
+          Nome
+          <input type="text" name="name" id="name" required />
+        </label>
+        <label>
+          E-mail
+          <input type="email" name="email" id="email" required />
+        </label>
+        <label>
+          Mensagem
+          <textarea name="message" id="message" rows="4" required></textarea>
+        </label>
+        <div class="form-row">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="reset" class="btn ghost">Limpar</button>
+        </div>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MinhaMarca. Feito com ♥</p>
+      <p class="small">Hospede esse site com GitHub Pages — branch <code>main</code> ou <code>gh-pages</code>.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
