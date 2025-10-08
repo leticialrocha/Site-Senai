@@ -2,16 +2,25 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meu Site - Exemplo</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- 🔗 CSS: verifique se o nome do arquivo é exatamente styles.css -->
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- SEO e acessibilidade -->
+  <meta name="description" content="Template responsivo com HTML, CSS e JS separados, pronto para GitHub Pages." />
+  <meta name="author" content="MinhaMarca" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="#">MinhaMarca</a>
+      <a class="brand" href="#home">MinhaMarca</a>
+
       <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu">☰</button>
-      <nav id="nav" class="nav">
+
+      <nav id="nav" class="nav" aria-label="Menu principal">
         <ul>
           <li><a href="#home">Início</a></li>
           <li><a href="#features">Funcionalidades</a></li>
@@ -19,6 +28,7 @@
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
+
       <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌓</button>
     </div>
   </header>
@@ -61,22 +71,20 @@
     <section id="contact" class="contact container">
       <h2>Contato</h2>
       <form id="contact-form" novalidate>
-        <label>
-          Nome
-          <input type="text" name="name" id="name" required />
-        </label>
-        <label>
-          E-mail
-          <input type="email" name="email" id="email" required />
-        </label>
-        <label>
-          Mensagem
-          <textarea name="message" id="message" rows="4" required></textarea>
-        </label>
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="name" required />
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="message">Mensagem</label>
+        <textarea name="message" id="message" rows="4" required></textarea>
+
         <div class="form-row">
           <button type="submit" class="btn primary">Enviar</button>
           <button type="reset" class="btn ghost">Limpar</button>
         </div>
+
         <p id="form-status" class="form-status" aria-live="polite"></p>
       </form>
     </section>
@@ -89,6 +97,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ⚙️ JS -->
+  <script src="./script.js"></script>
 </body>
 </html>
