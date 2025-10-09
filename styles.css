@@ -1,78 +1,87 @@
-* {
+/* styles.css - versão full screen */
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
   background-color: #1e1e1e;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
+/* container ocupa toda a viewport */
 .container {
   display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f5;
+  width: 100vw;
+  height: 100vh;        /* garante ocupar vertical toda a tela */
+  overflow: hidden;
+  border-radius: 0;     /* sem cantos arredondados para ocupar toda a tela */
+  box-shadow: none;
 }
 
+/* cada lado ocupa metade */
 .left {
   flex: 1;
-  background: linear-gradient(rgba(255,0,0,0.6), rgba(255,0,0,0.6)),
-              url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=60');
+  min-width: 0; /* evita overflow de imagens */
+  background:
+    linear-gradient(rgba(255,0,0,0.55), rgba(255,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=60');
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 3em;
-  font-weight: bold;
+  justify-content: center;
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 700;
 }
 
 .left span {
   background-color: #ff0000;
-  padding: 0 10px;
-  transform: skew(-10deg);
+  padding: 8px 18px;
+  transform: skew(-8deg);
   letter-spacing: 2px;
 }
 
+/* formulário à direita */
 .right {
   flex: 1;
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: #f2f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
 }
 
 .right h2 {
-  margin-bottom: 20px;
+  margin: 0 0 18px 0;
   color: #333;
 }
 
+/* form container (para limitar largura do form) */
+.right form {
+  width: 100%;
+  max-width: 420px; /* largura do card de login */
+}
+
 label {
-  font-size: 0.9em;
+  display: block;
+  font-size: 0.9rem;
   color: #333;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  margin-top: 12px;
+  margin-bottom: 6px;
 }
 
 input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
-  transition: border 0.3s;
+  transition: border-color .2s;
+  box-sizing: border-box;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
+input:focus {
   border-color: #ff0000;
 }
 
@@ -86,40 +95,39 @@ input[type="text"]:focus, input[type="password"]:focus {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #888;
+  color: #666;
+  user-select: none;
 }
 
 button {
-  margin-top: 25px;
+  margin-top: 22px;
   width: 100%;
   padding: 12px;
   background: linear-gradient(to right, #ff0000, #990000);
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1em;
-  font-weight: bold;
-  transition: background 0.3s;
+  font-weight: 700;
 }
 
-button:hover {
-  background: linear-gradient(to right, #cc0000, #660000);
-}
+button:hover { filter: brightness(.95); }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+/* Responsivo: em telas pequenas, empilha verticalmente */
+@media (max-width: 900px) {
+  .container { flex-direction: column; height: 100%; }
 
   .left {
-    height: 40%;
-    font-size: 2em;
+    width: 100%;
+    height: 40vh;
+    font-size: 2rem;
   }
 
   .right {
-    height: 60%;
-    padding: 30px 20px;
+    width: 100%;
+    height: 60vh;
+    padding: 24px;
   }
+
+  .right form { max-width: 100%; }
 }
